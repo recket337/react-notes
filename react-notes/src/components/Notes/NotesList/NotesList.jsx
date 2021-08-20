@@ -1,40 +1,25 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { removeNote } from '../../../redux/actions/notesActions';
+import React from "react";
 
-class NotesList extends Component {
-  removeNote = (index) => {
-    this.props.removeNote(index);
+export const NotesList = (props) => {
+  const onRemoveNote = (index) => {
+    props.removeNote(index);
   };
+  console.log(props);
 
-  render() {
-    const notesItems = this.props.notes.map((note, index) => (
-      <li key={index}>
-        <b>{note.title}</b>
-        <button onClick={() => this.removeNote(index)}>x</button>
-        <br />
-        <span>{note.content}</span>
-      </li>
-    ));
+  const notesItems = props.notes.map((note, index) => (
+    <li key={index}>
+      <b>{note.title}</b>
+      {/* <button onClick={() => this.editNote(index)}>-</button> */}
+      <button onClick={() => onRemoveNote(index)}>x</button>
+      <br />
+      <span>{note.content}</span>
+    </li>
+  ));
 
-    return (
-      <React.Fragment>
-        <h3>All Notes</h3>
-
-        <ul>{notesItems}</ul>
-      </React.Fragment>
-    );
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    notes: state.notes,
-  };
+  return (
+    <React.Fragment>
+      <h3>All Notes</h3>
+      <ul>{notesItems}</ul>
+    </React.Fragment>
+  );
 };
-
-const mapDispatchToProps = {
-  removeNote: removeNote,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(NotesList);
