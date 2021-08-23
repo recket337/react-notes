@@ -1,0 +1,30 @@
+$txtcolor: rgb(38, 69, 110);
+
+.form {
+  width: 20%;
+}
+
+.headline {
+  color: $txtcolor;
+}
+
+.titleInput {
+  display: block;
+  color: $txtcolor;
+
+  .titleInput::-webkit-input-placeholder {
+    color: $txtcolor;
+    background: rgb(184, 159, 78);
+ }
+
+  .titleInput::placeholder {
+    color: $txtcolor;
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+.textarea {
+  color: $txtcolor;
+}
+
+
