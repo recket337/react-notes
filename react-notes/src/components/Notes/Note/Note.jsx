@@ -6,8 +6,8 @@ export class Note extends Component {
     super(props);
 
     this.state = {
-      editTitle: props.title,
-      editContent: props.content,
+      title: '',
+      content: '',
     };
   }
 
@@ -15,49 +15,57 @@ export class Note extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmission = (e) => {
-    let { title, content } = this.state;
-    this.props.addNote(title, content);
-
-    this.setState({ title: '', content: '' });
+  onRemoveNote = () => {
+    this.props.removeNote(this.props.id);
   };
 
-  onRemoveNote = (index) => {
-    this.props.removeNote(index);
-  };
-  onEditNote = (index) => {
-    this.props.editNote(index);
+  onEditNote = () => {
+    this.props.editNote(this.props.id);
   };
 
-  render(){
+  onConfirmEdit = () => {
+    this.props.submitEdit(this.props.id, this.state.title, this.state.content)
+  }
+
+  onCancelEdit = () => {
+    this.props.cancelEdit(this.props.id)
+  }
+
+  render() {
+    console.log(this.props);
     return (
       <li>
-        {this.props.editMode ? (
+        {this.props.isEditing ? (
           <React.Fragment>
             <input
-              value={this.props.title}
+              type="text"
+              name="title"
+              value={this.state.title}
               onChange={this.handleChange}
               placeholder="title"
             />
             <input
-              value={this.props.content}
+              name="content"
+              value={this.state.content}
               onChange={this.handleChange}
               placeholder="content"
             />
 
             <button
-              onClick={() => this.props.confirmEdit(this.props.id, this.state.title, this.state.content)}
+              onClick={this.onConfirmEdit}
             >
               SUBMIT
             </button>
-            <button onClick={() => this.props.toggleEditMode()}>CANCEL</button>
+            <button onClick={this.onCancelEdit}>CANCEL</button>
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <button onClick={() => this.onEditNote(this.props.id)}>O</button>
-            <button onClick={() => this.onRemoveNote(this.props.id)}>x</button>
+            <button onClick={this.onEditNote}>[O]</button>
+            <button onClick={this.onRemoveNote}>[X]</button>
           </React.Fragment>
         )}
+        <h3>{this.props.title}</h3>
+        <p>{this.props.content}</p>
       </li>
     );
   }

@@ -4,22 +4,36 @@ import {
   EDIT_NOTE,
   UPDATE_INPUT_FORM_TITLE,
   UPDATE_INPUT_FORM_CONTENT,
-  UPDATE_EDIT_MODE_CONTENT,
-  UPDATE_EDIT_MODE_TITLE,
-  TOGGLE_EDIT_MODE,
   CONFIRM_EDIT,
+  CANCEL_EDIT,
 } from '../actions/notesActions';
 
 const initialState = {
   titleInput: '',
   contentInput: '',
-  editModeTitle: '',
-  editModeContent: '',
   editModeIsON: false,
   notesData: [
-    { id: 0, title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
-    { id: 1, title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
-    { id: 2, title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
+    {
+      id: 0,
+      title: 'fwefwe',
+      content: 'fewfew',
+      hashtags: [],
+      isEditing: false,
+    },
+    {
+      id: 1,
+      title: 'fwefwe',
+      content: 'fewfew',
+      hashtags: [],
+      isEditing: false,
+    },
+    {
+      id: 2,
+      title: 'fwefwe',
+      content: 'fewfew',
+      hashtags: [],
+      isEditing: false,
+    },
   ],
   result: [],
 };
@@ -36,14 +50,21 @@ export function notesReducer(state = initialState, action) {
             title: action.title,
             content: action.content,
             hashtags: action.content.split(' ').filter((i) => i[0] === '#'),
-            editMode: false,
+            isEditing: false,
           },
         ],
       };
     case REMOVE_NOTE:
       return {
         ...state,
-        notesData: state.notesData.filter((note, index) => index != action.id),
+        notesData: state.notesData
+          .filter((note, index) => index != action.id)
+          .map((item, index) => {
+            return {
+              ...item,
+              id: index,
+            };
+          }),
       };
 
     case UPDATE_INPUT_FORM_TITLE:
@@ -64,10 +85,11 @@ export function notesReducer(state = initialState, action) {
           return index === action.id
             ? {
                 ...note,
-                editMode: !note.editMode,
+                isEditing: true,
               }
             : note;
         }),
+        editModeIsON: true,
       };
 
     case CONFIRM_EDIT:
@@ -77,27 +99,25 @@ export function notesReducer(state = initialState, action) {
           return index === action.id
             ? {
                 ...note,
-                editMode: false,
+                isEditing: false,
                 title: action.title,
                 content: action.content,
               }
             : note;
         }),
+        editModeIsON: false,
       };
-
-    case UPDATE_EDIT_MODE_TITLE:
+    case CANCEL_EDIT:
       return {
         ...state,
-        editModeTitle: action.title,
-      };
-    case UPDATE_EDIT_MODE_CONTENT:
-      return {
-        ...state,
-        editModeContent: action.content,
-      };
-    case TOGGLE_EDIT_MODE:
-      return {
-        ...state,
+        notesData: state.notesData.map((note, index) => {
+          return index === action.id
+            ? {
+                ...note,
+                isEditing: false,
+              }
+            : note;
+        }),
         editModeIsON: false,
       };
 

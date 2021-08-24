@@ -7,6 +7,8 @@ export const TOGGLE_EDIT_MODE = 'TOGGLE_EDIT_MODE';
 export const UPDATE_EDIT_MODE_TITLE = 'UPDATE_EDIT_NODE_TITLE';
 export const UPDATE_EDIT_MODE_CONTENT = 'UPDATE_EDIT_NODE_CONTENT';
 export const CONFIRM_EDIT = 'CONFIRM_EDIT';
+export const CANCEL_EDIT = 'CANCEL_EDIT';
+
 
 export function confirmEditAC(id, title, content) {
   return { type: CONFIRM_EDIT, id, title, content };
@@ -14,6 +16,10 @@ export function confirmEditAC(id, title, content) {
 
 export function editNoteAC(id) {
   return { type: EDIT_NOTE, id };
+}
+
+export function cancelEditAC(id) {
+  return { type: CANCEL_EDIT, id };
 }
 
 export function addNoteAC(title, content) {
@@ -30,14 +36,6 @@ export function updateInputFormTitleAC(title) {
 
 export function updateInputFormContentAC(content) {
   return { type: UPDATE_INPUT_FORM_CONTENT, content };
-}
-
-export function updateEditModeTitleAC(title) {
-  return { type: UPDATE_EDIT_MODE_TITLE, title };
-}
-
-export function updateEditModeContentAC(content) {
-  return { type: UPDATE_EDIT_MODE_CONTENT, content };
 }
 
 export function toggleEditMode() {

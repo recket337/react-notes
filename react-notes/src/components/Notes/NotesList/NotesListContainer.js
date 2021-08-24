@@ -1,4 +1,4 @@
-import { editNoteAC, removeNoteAC, updateEditModeTitleAC, updateEditModeContentAC, toggleEditMode, confirmEditAC } from '../../../redux/actions/notesActions';
+import { editNoteAC, removeNoteAC, confirmEditAC, cancelEditAC} from '../../../redux/actions/notesActions';
 import { NotesList } from './NotesList';
 import { connect } from 'react-redux';
 
@@ -19,14 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     editNote: (id) => {
       dispatch(editNoteAC(id));
     },
-    updateEditModeTitle: (title) => {
-      dispatch(updateEditModeTitleAC(title));
-    },
-    updateEditModeContent: (content) => {
-      dispatch(updateEditModeContentAC(content));
-    },
-    toggleEditMode: () => {
-      dispatch(toggleEditMode());
+    cancelEdit: (id) => {
+      dispatch(cancelEditAC(id));
     }
   }
 };
