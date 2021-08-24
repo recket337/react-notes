@@ -17,10 +17,11 @@ const initialState = {
   editModeContent: '',
   editModeIsON: false,
   notesData: [
-    { title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
-    { title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
-    { title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
+    { id: 0, title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
+    { id: 1, title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
+    { id: 2, title: 'fwefwe', content: 'fewfew', hashtags: [], editMode: false },
   ],
+  result: [],
 };
 
 export function notesReducer(state = initialState, action) {
@@ -31,6 +32,7 @@ export function notesReducer(state = initialState, action) {
         notesData: [
           ...state.notesData,
           {
+            id: state.notesData.length,
             title: action.title,
             content: action.content,
             hashtags: action.content.split(' ').filter((i) => i[0] === '#'),

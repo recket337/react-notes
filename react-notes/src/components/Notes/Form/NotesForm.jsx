@@ -1,8 +1,7 @@
 import React from "react";
-import s from './NotesForm.module.scss'
+import s from "./NotesForm.module.scss";
 
 export const NotesForm = (props) => {
-
   const handleChangeTitle = (e) => {
     props.updateInputFormTitle(e.target.value);
   };
@@ -17,7 +16,7 @@ export const NotesForm = (props) => {
   };
 
   return (
-    <div className={s.form}>
+    <React.Fragment>
       <h2 className={s.headline}>Add a Note</h2>
       <form onSubmit={handleSubmission}>
         <input
@@ -32,12 +31,15 @@ export const NotesForm = (props) => {
         <textarea
           className={s.textarea}
           name="content"
+          placeholder="Note content..."
           value={props.content}
           onChange={handleChangeContent}
         ></textarea>
         <br />
-        <button type="submit">Add Note</button>
+        <button className={s.formButton} type="submit">
+          Add Note
+        </button>
       </form>
-    </div>
+    </React.Fragment>
   );
 };

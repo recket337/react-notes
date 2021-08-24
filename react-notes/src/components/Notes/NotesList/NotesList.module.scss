@@ -1,0 +1,8 @@
+ul {
+  list-style-type: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-gap: 20px;
+}
+

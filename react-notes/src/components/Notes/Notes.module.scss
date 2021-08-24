@@ -9,12 +9,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 50px;
     width: 100px;
+    margin-bottom: 15px;
     .headline {
       color:rgb(111, 28, 189)
     }
   }
+  .main {
+    display: flex;
+    justify-content: space-between;
+    .notesForm {
+      width: 18%;
+    }
+    .notesList {
+      width: 78%;
+    }
+  }
+
 }
 
 

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import NotesForm from './Form/NotesFormContainer';
-import NotesList from './NotesList/NotesListContainer';
-import s from './Notes.module.scss'
+import React, { Component } from "react";
+import NotesForm from "./Form/NotesFormContainer";
+import NotesList from "./NotesList/NotesListContainer";
+import s from "./Notes.module.scss";
 
 export class Notes extends Component {
   render() {
@@ -10,8 +10,14 @@ export class Notes extends Component {
         <header className={s.header}>
           <h1 className={s.headline}>NOTES</h1>
         </header>
-        <NotesForm />
-        <NotesList />
+        <div className={s.main}>
+          <section className={s.notesForm}>
+            <NotesForm />
+          </section>
+          <section className={s.notesList}>
+            <NotesList />
+          </section>
+        </div>
       </div>
     );
   }

@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 
 
 const mapStateToProps = (state) => ({
-  title: state.notes.editModeTitle,
-  content: state.notes.editModeContent,
   notes: state.notes.notesData,
   editModeIsON: state.notes.editModeIsON,
 });
