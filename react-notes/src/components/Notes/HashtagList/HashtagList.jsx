@@ -2,7 +2,7 @@ import s from "./HashtagList.module.scss";
 import React from "react";
 
 export const HashtagList = (props) => {
-  console.log(props);
+  //console.log(props);
   const onFilterHashtag = (e) => {
     props.filterHashtag(e.target.value);
   }

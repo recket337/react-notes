@@ -3,8 +3,14 @@ import { Note } from "./Note/Note";
 import React from "react";
 
 export const NotesList = (props) => {
-  //console.log(props);
-  const notesItems = props.notes.map((note, index) => (
+  console.log(props.filter);
+  let notesItems = props.notes;
+
+  if(props.filter) {
+    notesItems = notesItems.filter((note) => note.hashtags.includes(props.filter))
+  }
+
+  notesItems = notesItems.map((note, index) => (
     <Note
       key={note + index}
 

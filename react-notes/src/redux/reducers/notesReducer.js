@@ -36,7 +36,7 @@ const initialState = {
       isEditing: false,
     },
   ],
-  allHashtags: ["#lol", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg"],
+  allHashtags: ["#lol", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg", "#fewfwfew"],
   filter: '',
 };
 

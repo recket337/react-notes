@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => ({
   notes: state.notes.notesData,
   editModeIsON: state.notes.editModeIsON,
+  filter: state.notes.filter,
 });
 
 const mapDispatchToProps = (dispatch) => {
