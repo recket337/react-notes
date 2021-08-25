@@ -22,14 +22,14 @@ const initialState = {
       isEditing: false,
     },
     {
-      id: 0,
+      id: 1,
       title: 'kek',
       content: '#lol #omg fwefwefewg',
       hashtags: ["#lol", "#omg"],
       isEditing: false,
     },
     {
-      id: 0,
+      id: 2,
       title: 'kek',
       content: '#lol #omg fwefwefewg',
       hashtags: ["#lol", "#omg"],

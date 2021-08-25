@@ -24,21 +24,21 @@ export class Note extends Component {
   };
 
   onConfirmEdit = () => {
-    this.props.submitEdit(this.props.id, this.state.title, this.state.content)
-  }
+    this.props.submitEdit(this.props.id, this.state.title, this.state.content);
+  };
 
   onCancelEdit = () => {
-    this.props.cancelEdit(this.props.id)
-  }
+    this.props.cancelEdit(this.props.id);
+  };
 
   render() {
-    //console.log(this.props);
+    console.log(this.props);
     return (
       <li className={s.noteItem}>
-
         {this.props.isEditing ? (
           <React.Fragment>
             <input
+              className={s.noteInput}
               type="text"
               name="title"
               value={this.state.title}
@@ -46,24 +46,36 @@ export class Note extends Component {
               placeholder="title"
             />
             <input
+              className={s.noteInput}
               name="content"
               value={this.state.content}
               onChange={this.handleChange}
               placeholder="content"
             />
-
-            <button
-              onClick={this.onConfirmEdit}
-            >
-              SUBMIT
-            </button>
-            <button onClick={this.onCancelEdit}>CANCEL</button>
+            <div className={s.buttonBlock}>
+              <button onClick={this.onConfirmEdit}>SUBMIT</button>
+              <button onClick={this.onCancelEdit}>CANCEL</button>
+            </div>
           </React.Fragment>
         ) : (
           <React.Fragment>
             <div className={s.buttonsBlock}>
-              <button onClick={this.onEditNote}>[O]</button>
-              <button onClick={this.onRemoveNote}>[X]</button>
+              {this.props.EditMode && !this.props.isEditing ? (
+                <button
+                  className={s.buttonEdit}
+                  disabled
+                  onClick={this.onEditNote}
+                >
+                  _
+                </button>
+              ) : (
+                <button className={s.buttonEdit} onClick={this.onEditNote}>
+                  _
+                </button>
+              )}
+              <button className={s.buttonDelete} onClick={this.onRemoveNote}>
+                x
+              </button>
             </div>
             <h3 className={s.noteHeadline}>{this.props.title}</h3>
             <p>{this.props.content}</p>
@@ -72,4 +84,4 @@ export class Note extends Component {
       </li>
     );
   }
-};
+}

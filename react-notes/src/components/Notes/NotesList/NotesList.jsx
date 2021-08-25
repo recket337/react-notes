@@ -18,6 +18,7 @@ export const NotesList = (props) => {
       title={note.title}
       content={note.content}
       isEditing={note.isEditing}
+      editMode={props.editModeIsON}
 
       submitEdit={props.confirmEdit}
       removeNote={props.removeNote}

@@ -11,7 +11,35 @@
   justify-content: center;
 }
 
+.noteButton {
+  padding: 3px 6px;
+  border-radius: 10px;
+  color:navy;
+}
+
 .buttonsBlock {
   display: flex;
   justify-content: flex-end;
+}
+
+.buttonEdit {
+  @extend .noteButton;
+  background-color: chocolate;
+}
+
+.buttonDelete {
+  @extend .noteButton;
+  background-color: crimson;
+}
+
+.noteInput {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 3%;
+}
+
+.buttonBlock {
+  display: flex;
+  justify-content: center;
 }
