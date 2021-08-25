@@ -1,0 +1,18 @@
+$txtcolor: cadetblue;
+$objcolor: rgb(111, 28, 189);
+
+.listItem {
+  font-family: inherit;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: $objcolor;
+  background-color:rgb(7, 175, 7)
+}
+
+.buttonAll {
+  @extend .listItem;
+  background-color: $objcolor;
+  color: $txtcolor;
+}

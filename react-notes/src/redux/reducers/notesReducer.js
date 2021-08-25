@@ -6,6 +6,7 @@ import {
   UPDATE_INPUT_FORM_CONTENT,
   CONFIRM_EDIT,
   CANCEL_EDIT,
+  FILTER_HASHTAG,
 } from '../actions/notesActions';
 
 const initialState = {
@@ -15,27 +16,28 @@ const initialState = {
   notesData: [
     {
       id: 0,
-      title: 'fwefwe',
-      content: 'fewfew',
-      hashtags: [],
+      title: 'kek',
+      content: '#lol #omg fwefwefewg',
+      hashtags: ["#lol", "#omg"],
       isEditing: false,
     },
     {
-      id: 1,
-      title: 'fwefwe',
-      content: 'fewfew',
-      hashtags: [],
+      id: 0,
+      title: 'kek',
+      content: '#lol #omg fwefwefewg',
+      hashtags: ["#lol", "#omg"],
       isEditing: false,
     },
     {
-      id: 2,
-      title: 'fwefwe',
-      content: 'fewfew',
-      hashtags: [],
+      id: 0,
+      title: 'kek',
+      content: '#lol #omg fwefwefewg',
+      hashtags: ["#lol", "#omg"],
       isEditing: false,
     },
   ],
-  result: [],
+  allHashtags: ["#lol", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg", "#omg"],
+  filter: '',
 };
 
 export function notesReducer(state = initialState, action) {
@@ -53,6 +55,7 @@ export function notesReducer(state = initialState, action) {
             isEditing: false,
           },
         ],
+        allHashtags: [...new Set([...state.allHashtags, ...action.content.split(' ').filter((i) => i[0] === '#')])]
       };
     case REMOVE_NOTE:
       return {
@@ -102,10 +105,12 @@ export function notesReducer(state = initialState, action) {
                 isEditing: false,
                 title: action.title,
                 content: action.content,
+                hashtags: action.content.split(' ').filter((i) => i[0] === '#'),
               }
             : note;
         }),
         editModeIsON: false,
+        allHashtags: [...new Set([...state.allHashtags, ...action.content.split(' ').filter((i) => i[0] === '#')])],
       };
     case CANCEL_EDIT:
       return {
@@ -119,6 +124,11 @@ export function notesReducer(state = initialState, action) {
             : note;
         }),
         editModeIsON: false,
+      };
+    case FILTER_HASHTAG:
+      return {
+        ...state,
+        filter: action.hashtag,
       };
 
     default:

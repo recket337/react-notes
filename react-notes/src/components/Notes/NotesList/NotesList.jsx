@@ -1,9 +1,9 @@
 import s from "./NotesList.module.scss";
-import { Note } from "./../Note/Note";
+import { Note } from "./Note/Note";
 import React from "react";
 
 export const NotesList = (props) => {
-  console.log(props);
+  //console.log(props);
   const notesItems = props.notes.map((note, index) => (
     <Note
       key={note + index}
@@ -20,5 +20,5 @@ export const NotesList = (props) => {
     />
   ));
 
-  return <ul>{notesItems}</ul>;
+  return <ul className={s.notesList}>{notesItems}</ul>;
 };

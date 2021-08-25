@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NotesForm from "./Form/NotesFormContainer";
 import NotesList from "./NotesList/NotesListContainer";
+import HashtagList from "./HashtagList/HashtagListContainer";
 import s from "./Notes.module.scss";
 
 export class Notes extends Component {
@@ -11,10 +12,11 @@ export class Notes extends Component {
           <h1 className={s.headline}>NOTES</h1>
         </header>
         <div className={s.main}>
-          <section className={s.notesForm}>
+          <section className={s.forms}>
             <NotesForm />
+            <HashtagList />
           </section>
-          <section className={s.notesList}>
+          <section className={s.notes}>
             <NotesList />
           </section>
         </div>

@@ -18,7 +18,7 @@ export const NotesForm = (props) => {
   return (
     <React.Fragment>
       <h2 className={s.headline}>Add a Note</h2>
-      <form onSubmit={handleSubmission}>
+      <form className={s.form} onSubmit={handleSubmission}>
         <input
           className={s.titleInput}
           placeholder="Title"

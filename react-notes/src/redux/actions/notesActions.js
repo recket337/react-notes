@@ -8,7 +8,7 @@ export const UPDATE_EDIT_MODE_TITLE = 'UPDATE_EDIT_NODE_TITLE';
 export const UPDATE_EDIT_MODE_CONTENT = 'UPDATE_EDIT_NODE_CONTENT';
 export const CONFIRM_EDIT = 'CONFIRM_EDIT';
 export const CANCEL_EDIT = 'CANCEL_EDIT';
-
+export const FILTER_HASHTAG = 'FILTER_HASHTAG';
 
 export function confirmEditAC(id, title, content) {
   return { type: CONFIRM_EDIT, id, title, content };
@@ -38,6 +38,6 @@ export function updateInputFormContentAC(content) {
   return { type: UPDATE_INPUT_FORM_CONTENT, content };
 }
 
-export function toggleEditMode() {
-  return { type: TOGGLE_EDIT_MODE };
+export function filterHashtagAC(hashtag) {
+  return { type: FILTER_HASHTAG, hashtag };
 }

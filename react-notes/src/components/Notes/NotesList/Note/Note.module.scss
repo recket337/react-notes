@@ -1,0 +1,17 @@
+.noteItem {
+  padding: 5px;
+  height: 18vh;
+  border-radius: 5px;
+  background-color:mediumpurple ;
+}
+
+.noteHeadline {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonsBlock {
+  display: flex;
+  justify-content: flex-end;
+}

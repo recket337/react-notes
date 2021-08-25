@@ -6,8 +6,8 @@ export class Note extends Component {
     super(props);
 
     this.state = {
-      title: '',
-      content: '',
+      title: this.props.title,
+      content: this.props.content,
     };
   }
 
@@ -32,9 +32,10 @@ export class Note extends Component {
   }
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     return (
-      <li>
+      <li className={s.noteItem}>
+
         {this.props.isEditing ? (
           <React.Fragment>
             <input
@@ -60,12 +61,14 @@ export class Note extends Component {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <button onClick={this.onEditNote}>[O]</button>
-            <button onClick={this.onRemoveNote}>[X]</button>
+            <div className={s.buttonsBlock}>
+              <button onClick={this.onEditNote}>[O]</button>
+              <button onClick={this.onRemoveNote}>[X]</button>
+            </div>
+            <h3 className={s.noteHeadline}>{this.props.title}</h3>
+            <p>{this.props.content}</p>
           </React.Fragment>
         )}
-        <h3>{this.props.title}</h3>
-        <p>{this.props.content}</p>
       </li>
     );
   }

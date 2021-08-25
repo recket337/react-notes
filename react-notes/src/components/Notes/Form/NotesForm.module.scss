@@ -4,42 +4,43 @@ $objcolor: rgb(111, 28, 189);
 .headline {
   color: $txtcolor;
 }
+.form {
+  margin-bottom: 18px;
 
-.titleInput {
-  display: block;
-  color: $txtcolor;
-  border-radius: 12px;
-  padding: 3px;
-  margin-top: 8px;
-
-  .titleInput::-webkit-input-placeholder {
+  .titleInput {
+    display: block;
     color: $txtcolor;
-    background: rgb(184, 159, 78);
- }
+    border-radius: 12px;
+    padding: 3px;
+    margin-top: 8px;
 
-  .titleInput::placeholder {
+    .titleInput::-webkit-input-placeholder {
+      color: $txtcolor;
+      background: rgb(184, 159, 78);
+    }
+
+    .titleInput::placeholder {
+      color: $txtcolor;
+      font-family: "Dancing Script", cursive;
+    }
+  }
+
+  .textarea {
+    margin-top: 10px;
+    display: block;
     color: $txtcolor;
-    font-family: 'Dancing Script', cursive;
+    border-radius: 12px;
+    padding: 3px;
+    height: 100px;
+  }
+
+  .formButton {
+    width: 100px;
+    height: 40px;
+    border-radius: 12px;
+    font-family: "Dancing Script", cursive;
+    color: $txtcolor;
+    font-size: 16px;
+    background-color: cadetblue;
   }
 }
-
-.textarea {
-  margin-top: 10px;
-  display: block;
-  color: $txtcolor;
-  border-radius: 12px;
-  padding: 3px;
-  height: 100px;
-}
-
-.formButton {
-  width: 100px;
-  height: 40px;
-  color: $txtcolor;
-  border-radius: 12px;
-  font-family: 'Dancing Script', cursive;
-  font-size: 16px;
-  background-color: cadetblue;
-}
-
-
