@@ -9,6 +9,13 @@ $objcolor: rgb(111, 28, 189);
   font-size: 20px;
   color: $objcolor;
   background-color:rgb(221, 56, 172);
+  &:hover {
+    background-color:rgb(230, 32, 131);
+    transition: .5s
+  }
+  &:active {
+    background-color:rgb(32, 200, 230);
+  }
 }
 
 .buttonAll {

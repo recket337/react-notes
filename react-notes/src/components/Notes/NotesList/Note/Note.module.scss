@@ -24,12 +24,25 @@
 
 .buttonEdit {
   @extend .noteButton;
-  background-color: chocolate;
+  color: aqua;
+  background-color: rgb(38, 111, 206);
+  &:hover {
+    transition: .5s;
+    background-color:rgb(4, 73, 177);
+  }
+  &:disabled {
+    transition: .5s;
+    background-color:rgb(119, 121, 124);
+  }
 }
 
 .buttonDelete {
   @extend .noteButton;
   background-color: crimson;
+  &:hover {
+    transition: .5s;
+    background-color:darkred;
+  }
 }
 
 .noteInput {
