@@ -42,7 +42,8 @@ const initialState = {
 
 export function notesReducer(state = initialState, action) {
   switch (action.type) {
-    case ADD_NOTE:
+    case ADD_NOTE: {
+      const updatedTags = action.content.split(' ').filter((i) => i[0] === '#');
       return {
         ...state,
         notesData: [
@@ -51,12 +52,13 @@ export function notesReducer(state = initialState, action) {
             id: state.notesData.length,
             title: action.title,
             content: action.content,
-            hashtags: action.content.split(' ').filter((i) => i[0] === '#'),
+            hashtags: updatedTags,
             isEditing: false,
           },
         ],
-        allHashtags: [...new Set([...state.allHashtags, ...action.content.split(' ').filter((i) => i[0] === '#')])]
+        allHashtags: [...new Set([...state.allHashtags, ...updatedTags])]
       };
+    }
     case REMOVE_NOTE:
       return {
         ...state,
@@ -95,7 +97,8 @@ export function notesReducer(state = initialState, action) {
         editModeIsON: true,
       };
 
-    case CONFIRM_EDIT:
+    case CONFIRM_EDIT: {
+      const updatedTags = action.content.split(' ').filter((i) => i[0] === '#');
       return {
         ...state,
         notesData: state.notesData.map((note, index) => {
@@ -105,13 +108,14 @@ export function notesReducer(state = initialState, action) {
                 isEditing: false,
                 title: action.title,
                 content: action.content,
-                hashtags: action.content.split(' ').filter((i) => i[0] === '#'),
+                hashtags: updatedTags,
               }
             : note;
         }),
         editModeIsON: false,
-        allHashtags: [...new Set([...state.allHashtags, ...action.content.split(' ').filter((i) => i[0] === '#')])],
+        allHashtags: [...new Set([...state.allHashtags, ...updatedTags])],
       };
+    }
     case CANCEL_EDIT:
       return {
         ...state,

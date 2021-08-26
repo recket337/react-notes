@@ -11,7 +11,7 @@ export class Notes extends Component {
         <header className={s.header}>
           <h1 className={s.headline}>NOTES</h1>
         </header>
-        <div className={s.main}>
+        <main className={s.main}>
           <section className={s.forms}>
             <NotesForm />
             <HashtagList />
@@ -19,7 +19,7 @@ export class Notes extends Component {
           <section className={s.notes}>
             <NotesList />
           </section>
-        </div>
+        </main>
       </div>
     );
   }

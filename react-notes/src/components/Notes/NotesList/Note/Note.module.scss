@@ -1,8 +1,8 @@
 .noteItem {
   padding: 5px;
-  height: 18vh;
+  height: 150px;
   border-radius: 5px;
-  background-color:mediumpurple ;
+  background-color:mediumpurple;
 }
 
 .noteHeadline {
@@ -42,4 +42,10 @@
 .buttonBlock {
   display: flex;
   justify-content: center;
+}
+
+.hash {
+  background-color:rgb(221, 56, 172);
+  padding: 0 5px;
+  border-radius: 15px;
 }

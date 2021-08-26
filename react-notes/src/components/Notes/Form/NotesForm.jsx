@@ -16,7 +16,7 @@ export const NotesForm = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <h2 className={s.headline}>Add a Note</h2>
       <form className={s.form} onSubmit={handleSubmission}>
         <input
@@ -40,6 +40,6 @@ export const NotesForm = (props) => {
           Add Note
         </button>
       </form>
-    </React.Fragment>
+    </>
   );
 };

@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    // filterBYHashtag
     filterHashtag: (hashtag) => {
       dispatch(filterHashtagAC(hashtag))
     },

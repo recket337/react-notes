@@ -32,11 +32,17 @@ export class Note extends Component {
   };
 
   render() {
-    console.log(this.props);
+    const lightHashtagsContent = this.props.content
+      .split(" ")
+      .map((item) =>
+        item[0] === "#" ? <span className={s.hash}>{item}</span> : item+" "
+      );
     return (
       <li className={s.noteItem}>
         {this.props.isEditing ? (
           <React.Fragment>
+            <h3 className={s.noteHeadline}>{this.props.title}</h3>
+            <p>{lightHashtagsContent}</p>
             <input
               className={s.noteInput}
               type="text"
@@ -60,17 +66,13 @@ export class Note extends Component {
         ) : (
           <React.Fragment>
             <div className={s.buttonsBlock}>
-              {this.props.EditMode && !this.props.isEditing ? (
+              {!this.props.isEditing && (
                 <button
                   className={s.buttonEdit}
-                  disabled
+                  disabled={this.props.editMode && !this.props.isEditing}
                   onClick={this.onEditNote}
                 >
-                  _
-                </button>
-              ) : (
-                <button className={s.buttonEdit} onClick={this.onEditNote}>
-                  _
+                  ✎
                 </button>
               )}
               <button className={s.buttonDelete} onClick={this.onRemoveNote}>
