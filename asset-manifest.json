@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-notes/static/css/main.df8772c3.chunk.css",
+    "main.js": "/react-notes/static/js/main.5f7b8f44.chunk.js",
+    "main.js.map": "/react-notes/static/js/main.5f7b8f44.chunk.js.map",
+    "runtime-main.js": "/react-notes/static/js/runtime-main.fced0f36.js",
+    "runtime-main.js.map": "/react-notes/static/js/runtime-main.fced0f36.js.map",
+    "static/js/2.cef15ac2.chunk.js": "/react-notes/static/js/2.cef15ac2.chunk.js",
+    "static/js/2.cef15ac2.chunk.js.map": "/react-notes/static/js/2.cef15ac2.chunk.js.map",
+    "static/js/3.ea063079.chunk.js": "/react-notes/static/js/3.ea063079.chunk.js",
+    "static/js/3.ea063079.chunk.js.map": "/react-notes/static/js/3.ea063079.chunk.js.map",
+    "index.html": "/react-notes/index.html",
+    "static/css/main.df8772c3.chunk.css.map": "/react-notes/static/css/main.df8772c3.chunk.css.map",
+    "static/js/2.cef15ac2.chunk.js.LICENSE.txt": "/react-notes/static/js/2.cef15ac2.chunk.js.LICENSE.txt",
+    "static/media/Notes.module.scss": "/react-notes/static/media/cover.bf6fafc5.jpg",
+    "static/media/git.8d961941.png": "/react-notes/static/media/git.8d961941.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fced0f36.js",
+    "static/js/2.cef15ac2.chunk.js",
+    "static/css/main.df8772c3.chunk.css",
+    "static/js/main.5f7b8f44.chunk.js"
+  ]
+}
