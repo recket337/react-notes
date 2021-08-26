@@ -17,7 +17,7 @@ export const NotesForm = (props) => {
 
   return (
     <>
-      <h2 className={s.headline}>Add a Note</h2>
+      <h2 className={s.headline}>Create</h2>
       <form className={s.form} onSubmit={handleSubmission}>
         <input
           className={s.titleInput}

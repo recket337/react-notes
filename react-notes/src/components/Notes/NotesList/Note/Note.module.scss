@@ -12,8 +12,7 @@
 }
 
 .noteButton {
-  padding: 3px 6px;
-  border-radius: 10px;
+  border-radius: 50%;
   color:navy;
 }
 
@@ -25,6 +24,7 @@
 .buttonEdit {
   @extend .noteButton;
   color: aqua;
+  padding: 3px 6px;
   background-color: rgb(38, 111, 206);
   &:hover {
     transition: .5s;
@@ -38,6 +38,7 @@
 
 .buttonDelete {
   @extend .noteButton;
+  padding: 3px 8px;
   background-color: crimson;
   &:hover {
     transition: .5s;

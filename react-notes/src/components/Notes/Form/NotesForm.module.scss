@@ -2,36 +2,50 @@ $txtcolor: rgb(38, 69, 110);
 $objcolor: rgb(111, 28, 189);
 
 .headline {
+  padding-top: 10px;
   color: $txtcolor;
 }
 .form {
   margin-bottom: 18px;
 
   .titleInput {
+    width: 100%;
     display: block;
     color: $txtcolor;
     border-radius: 12px;
-    padding: 3px;
+    padding: 5px;
     margin-top: 8px;
 
-    .titleInput::-webkit-input-placeholder {
+
+    &::-webkit-input-placeholder {
       color: $txtcolor;
       background: rgb(184, 159, 78);
     }
 
-    .titleInput::placeholder {
+    &::placeholder {
       color: $txtcolor;
-      font-family: "Dancing Script", cursive;
+      font-family: "Raleway", cursive;
     }
   }
 
   .textarea {
+    width: 100%;
     margin-top: 10px;
     display: block;
     color: $txtcolor;
     border-radius: 12px;
-    padding: 3px;
+    padding: 5px;
     height: 100px;
+
+    &::-webkit-input-placeholder {
+      color: $txtcolor;
+      background: rgb(184, 159, 78);
+    }
+
+    &::placeholder {
+      color: $txtcolor;
+      font-family: "Raleway", cursive;
+    }
   }
 
   .formButton {

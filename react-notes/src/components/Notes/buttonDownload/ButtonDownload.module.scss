@@ -1,0 +1,17 @@
+$txtcolor: rgb(38, 69, 110);
+$objcolor: rgb(111, 28, 189);
+
+.downloadButton {
+  float: right;
+  width: 80px;
+  height: 30px;
+  border-radius: 12px;
+  font-family: "Raleway";
+  color: $txtcolor;
+  font-size: 16px;
+  background-color: cadetblue;
+  &:hover {
+    background-color: darkkhaki;
+    transition: 0.5s;
+  }
+}
