@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 const mapStateToProps = (state) => ({
+  activeHashtag: state.notes.filter,
   hashtags: state.notes.allHashtags,
 });
 

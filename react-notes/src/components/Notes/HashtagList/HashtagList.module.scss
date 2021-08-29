@@ -2,6 +2,7 @@ $txtcolor: cadetblue;
 $objcolor: rgb(111, 28, 189);
 
 .listItem {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   font-family: inherit;
   display: inline-block;
   padding: 5px 10px;
@@ -13,7 +14,8 @@ $objcolor: rgb(111, 28, 189);
     background-color:rgb(230, 32, 131);
     transition: .5s
   }
-  &:active {
+  &__active {
+    @extend .listItem;
     background-color:rgb(32, 200, 230);
   }
 }
@@ -21,5 +23,9 @@ $objcolor: rgb(111, 28, 189);
 .buttonAll {
   @extend .listItem;
   background-color: $objcolor;
-  color: $txtcolor;
+  color:chocolate;
+  &__active {
+    @extend .buttonAll;
+    background-color:rgb(32, 200, 230);
+  }
 }

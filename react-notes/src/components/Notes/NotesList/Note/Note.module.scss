@@ -1,65 +1,114 @@
+$txtcolor: rgb(38, 69, 110);
+
 .noteItem {
-  padding: 5px;
-  height: 150px;
+  padding: 7px;
+  height: 165px;
   border-radius: 5px;
-  background-color:mediumpurple;
-}
+  background-color: mediumpurple;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-.noteHeadline {
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.noteButton {
-  border-radius: 50%;
-  color:navy;
-}
-
-.buttonsBlock {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.buttonEdit {
-  @extend .noteButton;
-  color: aqua;
-  padding: 3px 6px;
-  background-color: rgb(38, 111, 206);
-  &:hover {
-    transition: .5s;
-    background-color:rgb(4, 73, 177);
+  &__text {
+    margin: 7px 0;
   }
-  &:disabled {
-    transition: .5s;
-    background-color:rgb(119, 121, 124);
+
+  &__headline {
+    color: aquamarine;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
   }
-}
 
-.buttonDelete {
-  @extend .noteButton;
-  padding: 3px 8px;
-  background-color: crimson;
-  &:hover {
-    transition: .5s;
-    background-color:darkred;
+  &__buttonsBlock {
+    display: flex;
+    justify-content: space-between;
+
+    .button {
+      border-radius: 50%;
+      color: navy;
+    }
+
+    &__buttonEdit {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      @extend .button;
+      color: aqua;
+      padding: 3px 6px;
+      background-color: rgb(38, 111, 206);
+      &:hover {
+        transition: 0.5s;
+        background-color: rgb(4, 73, 177);
+      }
+      &:disabled {
+        transition: 0.5s;
+        background-color: rgb(119, 121, 124);
+      }
+    }
+
+    &__buttonDelete {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      @extend .button;
+      padding: 3px 8px;
+      background-color: crimson;
+      &:hover {
+        transition: 0.5s;
+        background-color: darkred;
+      }
+    }
   }
-}
 
-.noteInput {
-  display: block;
-  margin: 0 auto;
-  width: 90%;
-  margin-bottom: 3%;
-}
+  &__buttonBlock {
+    display: flex;
+    justify-content: center;
+  }
 
-.buttonBlock {
-  display: flex;
-  justify-content: center;
+  &__noteInput {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 3%;
+
+    font-family: "Raleway";
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    color: $txtcolor;
+    border-radius: 12px;
+    padding: 5px;
+    background-color: cadetblue;
+
+    &::-webkit-input-placeholder {
+      color: rgb(184, 159, 78);
+      font-family: "Raleway";
+      font-style: italic;
+    }
+  }
+
+  .buttonSC {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    font-family: "Raleway";
+    color: $txtcolor;
+    font-size: 16px;
+
+    &:hover {
+      background-color:darkkhaki;
+      transition: .5s;
+    }
+    padding: 3px;
+  }
+
+  &__buttonSubmit {
+    @extend .buttonSC;
+    background-color: rgb(39, 133, 209);
+    margin-right: 5px;
+  }
+
+  &__buttonCancel {
+    @extend .buttonSC;
+    background-color: rgb(235, 23, 129);
+  }
 }
 
 .hash {
-  background-color:rgb(221, 56, 172);
+  background-color: rgb(221, 56, 172);
   padding: 0 5px;
   border-radius: 15px;
 }

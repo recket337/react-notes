@@ -18,9 +18,9 @@ export const NotesForm = (props) => {
   return (
     <>
       <h2 className={s.headline}>Create</h2>
-      <form className={s.form} onSubmit={handleSubmission}>
+      <form className={s.createForm} onSubmit={handleSubmission}>
         <input
-          className={s.titleInput}
+          className={s.createForm__titleInput}
           placeholder="Title"
           type="text"
           name="title"
@@ -29,14 +29,13 @@ export const NotesForm = (props) => {
         />
 
         <textarea
-          className={s.textarea}
+          className={s.contentTextarea}
           name="content"
           placeholder="Note content..."
           value={props.content}
           onChange={handleChangeContent}
         ></textarea>
-        <br />
-        <button className={s.formButton} type="submit">
+        <button className={s.formButton} disabled={!props.title || !props.content} type="submit">
           Add Note
         </button>
       </form>

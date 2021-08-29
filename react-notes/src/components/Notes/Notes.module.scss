@@ -1,38 +1,41 @@
-.header {
-  padding: 0 20px;
-  background-color: rgb(230, 151, 78);
+.app {
+  max-width: 2560px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 10vh;
-  width: 100%;
-  .headline {
-    color:rgb(111, 28, 189)
-  }
-}
-.wrapper {
-  background-image: url(./../../assets/img/cover.jpg);
-  background-position: center;
-  height: 90vh;
-  padding: 0 20px;
 
-  .main {
+  &__header {
+    filter: drop-shadow(0px 1px 10px rgba(18, 87, 91, 0.25));
+    padding: 0 2%;
+    background-color: rgb(230, 151, 78);
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    .forms {
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    &__headline {
+      color:rgb(111, 28, 189);
+    }
+    &__gitLink {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__main {
+    background-image: url(./../../assets/img/cover.jpg);
+    background-position: center;
+    height: 90vh;
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    &__forms {
       width: 18%;
     }
-    .notes {
+    &__notes {
       width: 78%;
     }
   }
 
-}
-
-.gitLogo {
-  width: 40px;
-  height: 40px;
 }
 
 

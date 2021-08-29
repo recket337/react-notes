@@ -1,10 +1,20 @@
 .notesList {
   padding-top: 15px;
   list-style-type: none;
+  height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 2%;
+  overflow: scroll;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  &::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in red */
+  &::-webkit-scrollbar-thumb {
+    background: #ff0000;
+  }
 }
-

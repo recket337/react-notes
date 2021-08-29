@@ -3,32 +3,33 @@ $objcolor: rgb(111, 28, 189);
 
 .headline {
   padding-top: 10px;
-  color: $txtcolor;
+  color: $objcolor;
 }
-.form {
+.createForm {
   margin-bottom: 18px;
 
-  .titleInput {
+  &__titleInput {
+    font-family: "Raleway";
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     width: 100%;
     display: block;
     color: $txtcolor;
     border-radius: 12px;
     padding: 5px;
     margin-top: 8px;
-
+    background-color: cadetblue;
 
     &::-webkit-input-placeholder {
-      color: $txtcolor;
-      background: rgb(184, 159, 78);
-    }
-
-    &::placeholder {
-      color: $txtcolor;
-      font-family: "Raleway", cursive;
+      color: rgb(184, 159, 78);
+      font-family: "Raleway";
+      font-style: italic;
     }
   }
 
-  .textarea {
+  .contentTextarea {
+    font-family: "Raleway";
+    background-color: cadetblue;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     width: 100%;
     margin-top: 10px;
     display: block;
@@ -36,19 +37,18 @@ $objcolor: rgb(111, 28, 189);
     border-radius: 12px;
     padding: 5px;
     height: 100px;
+    resize: none;
 
     &::-webkit-input-placeholder {
-      color: $txtcolor;
-      background: rgb(184, 159, 78);
-    }
-
-    &::placeholder {
-      color: $txtcolor;
-      font-family: "Raleway", cursive;
+      color: rgb(184, 159, 78);
+      font-family: "Raleway";
+      font-style: italic;
     }
   }
 
   .formButton {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top: 10px;
     width: 100px;
     height: 40px;
     border-radius: 12px;
@@ -58,6 +58,10 @@ $objcolor: rgb(111, 28, 189);
     background-color: cadetblue;
     &:hover {
       background-color:darkkhaki;
+      transition: .5s;
+    }
+    &:disabled {
+      background-color:rgba(85, 83, 54, 0.863);
       transition: .5s;
     }
   }
